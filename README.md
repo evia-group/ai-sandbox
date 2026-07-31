@@ -4,6 +4,7 @@
 
 Setup proxy on Docker and IDE and start container
 
+Extended version for .NET by [Andreas Baranow](https://github.com/evandrii)
 
 ---
 ## Description
