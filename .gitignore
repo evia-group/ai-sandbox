@@ -1,0 +1,24 @@
+# Build results
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.userprefs
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Test Results
+TestResults/
+*.trx
+
+# OS
+.DS_Store
+Thumbs.db
