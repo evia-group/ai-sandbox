@@ -54,6 +54,15 @@ RUN ARCH=$(dpkg --print-architecture) && \
   sudo dpkg -i "git-delta_${GIT_DELTA_VERSION}_${ARCH}.deb" && \
   rm "git-delta_${GIT_DELTA_VERSION}_${ARCH}.deb"
 
+# Install .NET SDK (LTS)
+ARG DOTNET_VERSION=8.0
+ENV DOTNET_ROOT=/usr/share/dotnet
+ENV PATH="${PATH}:${DOTNET_ROOT}:${DOTNET_ROOT}/tools"
+RUN wget https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh && \
+  chmod +x /tmp/dotnet-install.sh && \
+  /tmp/dotnet-install.sh --channel "$DOTNET_VERSION" --install-dir "$DOTNET_ROOT" && \
+  rm /tmp/dotnet-install.sh
+
 # Set up non-root user
 USER node
 
