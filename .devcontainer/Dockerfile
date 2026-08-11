@@ -3,6 +3,20 @@ FROM node:20
 ARG TZ
 ENV TZ="$TZ"
 
+# Corporate proxy. Declared as ENV (not just ARG) on purpose: devcontainer FEATURES are
+# built in layers FROM this image, so only ENV reaches their install scripts — the JDK and
+# docker-ce downloads get no network otherwise. Empty on a proxy-less host, which apt/curl/
+# npm all treat as "no proxy". Values come from the host env via build.args.
+ARG HTTP_PROXY=""
+ARG HTTPS_PROXY=""
+ARG NO_PROXY=""
+ENV HTTP_PROXY="$HTTP_PROXY" \
+    HTTPS_PROXY="$HTTPS_PROXY" \
+    NO_PROXY="$NO_PROXY" \
+    http_proxy="$HTTP_PROXY" \
+    https_proxy="$HTTPS_PROXY" \
+    no_proxy="$NO_PROXY"
+
 ARG CLAUDE_CODE_VERSION=latest
 
 # Install basic development tools and iptables/ipset
