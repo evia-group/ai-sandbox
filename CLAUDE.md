@@ -1,1 +1,2 @@
 - When reporting information to me, be extremely concise and sacrifice grammar for the sake of concision.
+- For task work (grill → implement → record cost), follow @docs/WORKFLOW.md.
