@@ -33,3 +33,12 @@ Switch `/evia:wiki:ingest` and `/evia:wiki:lint` to do all vault operations thro
 - Search: unquoted `original:` errors ("Operator not recognized"), unquoted `[[` errors; quote literals inside query (`query="\"[!warning] Contradiction\""`). Source pages via `[type:source]` property search.
 
 <!-- task-cost -->
+
+## Task cost
+
+| Session | Started (UTC) | Wall-clock | Model | Input | Output | Cache read | Cache write |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: |
+| `75eb589b` | 2026-10-01 08:48 | 12m 09s | claude-opus-5-5 | 24,511 | 37,996 | 3,005,568 | 170,766 |
+| **Total** | | 12m 09s | claude-opus-5-5 | **24,511** | **37,996** | **3,005,568** | **170,766** |
+
+Raw tokens from Claude Code's end-of-session `cost-state` (subagents and side calls included). Written by `/record-task-cost`.

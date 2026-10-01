@@ -10,7 +10,7 @@ sources: ["[[<source-page-slug>]]"]
 # <Canonical Name>
 
 > One-sentence identity: what this is (system, service, organization, person, artifact)
-> and its role in the Meldeportal project.
+> and its role in the project.
 
 ## Overview
 
